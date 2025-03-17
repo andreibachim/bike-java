@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="ConnectionButton" parent="GtkButton">
+    <property name="icon-name">bluetooth-hardware-disabled</property>
+    <style>
+      <class name="flat" />
+    </style>
+  </template>
+</interface>

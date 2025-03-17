@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="DeviceListing" parent="AdwActionRow">
+        <property name="title">Device name</property>
+        <property name="subtitle">Device status</property>
+        <child type="suffix">
+            <object class="GtkImage" id="icon">
+                <property name="icon-name">network-cellular-offline-symbolic</property>
+            </object>
+        </child>
+        <property name="activatable-widget">
+            <object class="AdwBin"/>
+        </property>
+        <property name="action-name">connect-dialog.load-info</property>
+    </template>
+</interface>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="ConnectionDialog" parent="AdwDialog">
+        <property name="content-height">600</property>
+        <property name="content-width">600</property>
+        <child>
+            <object class="AdwNavigationView" id="navigationView">
+                <child>
+                    <object class="DeviceFinder"/>
+                </child>
+                <child>
+                    <object class="DeviceInfo"/>
+                </child>
+            </object>
+        </child>
+    </template>
+</interface>

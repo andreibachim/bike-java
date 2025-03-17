@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="DeviceFinder" parent="AdwNavigationPage">
+        <property name="title">Device Finder</property>
+        <property name="tag">device-finder</property>
+        <child>
+            <object class="AdwToolbarView">
+                <property name="margin-bottom">50</property>
+                <child type="top">
+                    <object class="AdwHeaderBar">
+                        <property name="show-title">false</property>
+                    </object>
+                </child>
+                <property name="content">
+                    <object class="AdwPreferencesPage">
+                        <child>
+                            <object class="AdwPreferencesGroup" id="preferencesGroup">
+                                <property name="margin-top">20</property>
+                                <property name="margin-bottom">20</property>
+                                <property name="title">Available devices</property>
+                                <property name="description">Nearby smart trainers</property>
+                                <property name="header-suffix">
+                                    <object class="AdwSpinner"/>
+                                </property>
+                                <child>
+                                    <object class="GtkListBox" id="listBox">
+                                        <property name="selection-mode">none</property>
+                                        <style>
+                                            <class name="boxed-list"/>
+                                        </style>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                    </object>
+                </property>
+            </object>
+        </child>
+    </template>
+</interface>

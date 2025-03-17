@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/github/andreibachim/bike/">
+    <file compressed="true" preprocess="xml-stripblanks">ui/window.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/connection-button.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/connection-dialog.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/device-finder.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/device-listing.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/device-info.ui</file>
+  </gresource>
+</gresources>

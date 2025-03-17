@@ -1,0 +1,51 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //bluez-dbus
+    implementation 'com.github.hypfvieh:bluez-dbus:0.3.1'
+    runtimeOnly 'com.github.hypfvieh:dbus-java-transport-native-unixsocket:5.1.0'
+
+    //gtk
+    implementation 'io.github.jwharm.javagi:gtk:0.11.2'
+    implementation 'io.github.jwharm.javagi:adw:0.11.2'
+    
+    //logging
+    implementation 'org.slf4j:slf4j-api:2.0.17'
+    implementation 'org.slf4j:slf4j-simple:2.0.17'
+
+    //lombok
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+    testImplementation libs.junit
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
+    }
+}
+
+application {
+    mainClass = 'io.github.andreibachim.bike.Main'
+    applicationDefaultJvmArgs = [
+            "--enable-native-access=ALL-UNNAMED",
+            "-Dorg.slf4j.simpleLogger.log.io.github.andreibachim.bike=" + System.getenv("LOG_LEVEL") ?: "info"
+    ]
+}
+
+
+tasks.register('compileResources', Exec) {
+    workingDir 'src/main/resources'
+    commandLine 'glib-compile-resources', 'resources.xml'
+}
+
+tasks.named('compileJava') {
+    dependsOn compileResources
+}
